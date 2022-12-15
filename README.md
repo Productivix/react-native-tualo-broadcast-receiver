@@ -11,11 +11,17 @@ npm install react-native-tualo-broadcast-receiver
 ## Usage
 
 ```js
-import { multiply } from 'react-native-tualo-broadcast-receiver';
+import { register } from 'react-native-tualo-broadcast-receiver';
 
 // ...
 
-const result = await multiply(3, 7);
+const eventEmitter = new NativeEventEmitter(NativeModules.TualoBroadcastReceiverModule);
+    eventListener = eventEmitter.addListener("com.my.fancy.INTENT", (event) => {
+    console.log(event) 
+});
+
+// ...
+const result = await register(['com.my.fancy.INTENT']);
 ```
 
 ## Contributing
