@@ -64,6 +64,7 @@ repositories {
 }
 
 def kotlin_version = getExtOrDefault("kotlinVersion")
+def core_version = "1.9.0"
 
 dependencies {
   // For < 0.71, this will be from the local maven repo
@@ -71,6 +72,9 @@ dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  // Java language implementation
+  implementation("androidx.core:core:$core_version")
+
 }
 
 if (isNewArchitectureEnabled()) {

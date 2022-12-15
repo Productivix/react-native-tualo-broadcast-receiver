@@ -17,6 +17,12 @@ const TualoBroadcastReceiver = NativeModules.TualoBroadcastReceiver
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return TualoBroadcastReceiver.multiply(a, b);
+
+
+export function register(intentFilter: String[]): any {
+  console.log('register','index.tsx','intentFilter',intentFilter,Platform.OS);
+  if (Platform.OS=='android') return TualoBroadcastReceiver.register(intentFilter);
+
+  console.log('not on android','doing nothing');
+  return null;
 }
