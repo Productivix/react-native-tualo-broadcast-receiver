@@ -16,7 +16,7 @@ RCT_EXPORT_MODULE()
 }
 */
 
-RCT_EXPORT_METHOD(register:(NSString *)name location:(NSString *)location)
+RCT_EXPORT_METHOD(register )
 {
 }
 

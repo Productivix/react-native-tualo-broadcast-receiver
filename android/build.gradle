@@ -61,6 +61,10 @@ android {
 repositories {
   mavenCentral()
   google()
+  maven {
+        // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+        url "$rootDir/../node_modules/react-native/android"
+  }
 }
 
 def kotlin_version = getExtOrDefault("kotlinVersion")
@@ -70,7 +74,9 @@ dependencies {
   // For < 0.71, this will be from the local maven repo
   // For > 0.71, this will be replaced by `com.facebook.react:react-android:$version` by react gradle plugin
   //noinspection GradleDynamicVersion
-  implementation "com.facebook.react:react-native"
+  // implementation "com.facebook.react:react-native"
+  implementation "com.facebook.react:react-native:+"
+
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
   // Java language implementation
   implementation("androidx.core:core:$core_version")
@@ -84,3 +90,4 @@ if (isNewArchitectureEnabled()) {
     codegenJavaPackageName = "com.tualobroadcastreceiver"
   }
 }
+

@@ -17,12 +17,29 @@ const TualoBroadcastReceiver = NativeModules.TualoBroadcastReceiver
       }
     );
 
-
-
 export function register(intentFilter: String[]): any {
-  console.log('register','index.tsx','intentFilter',intentFilter,Platform.OS);
-  if (Platform.OS=='android') return TualoBroadcastReceiver.register(intentFilter);
+  console.log(
+    'register',
+    'index.tsx',
+    'intentFilter',
+    intentFilter,
+    Platform.OS
+  );
+  if (Platform.OS === 'android')
+    return TualoBroadcastReceiver.register(intentFilter);
 
-  console.log('not on android','doing nothing');
+  console.log('not on android', 'doing nothing');
+  return TualoBroadcastReceiver.register();
+}
+
+export function unregister(intentFilter: String[]): any {
+  console.log(
+    'unregister',
+    'index.tsx',
+    'intentFilter',
+    intentFilter,
+    Platform.OS
+  );
+  if (Platform.OS === 'android') return TualoBroadcastReceiver.unregister();
   return null;
 }

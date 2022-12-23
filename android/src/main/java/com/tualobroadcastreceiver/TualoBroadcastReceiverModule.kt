@@ -59,11 +59,13 @@ class TualoBroadcastReceiverModule(reactContext: ReactApplicationContext) :
 
 
       val listenToBroadcastsFromOtherApps = true
+      /*
       val receiverFlags = if (listenToBroadcastsFromOtherApps) {
           ReactApplicationContext.RECEIVER_EXPORTED
       } else {
           ReactApplicationContext.RECEIVER_NOT_EXPORTED
       }
+      */
       val filter = IntentFilter()
       for (index in 0..(intentFilter.size()-1)) {
         val readableType = intentFilter.getType(index);

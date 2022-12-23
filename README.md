@@ -14,12 +14,12 @@ npm install react-native-tualo-broadcast-receiver
 import { register } from 'react-native-tualo-broadcast-receiver';
 
 // ...
-
+if (React.Platform.OS=='android'){
 const eventEmitter = new NativeEventEmitter(NativeModules.TualoBroadcastReceiverModule);
     eventListener = eventEmitter.addListener("com.my.fancy.INTENT", (event) => {
     console.log(event) 
 });
-
+}
 // ...
 const result = await register(['com.my.fancy.INTENT']);
 ```
