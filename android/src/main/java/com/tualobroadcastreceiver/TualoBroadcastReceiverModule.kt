@@ -58,7 +58,7 @@ class TualoBroadcastReceiverModule(reactContext: ReactApplicationContext) :
   fun register( intentFilter: ReadableArray ) {
 
 
-      val listenToBroadcastsFromOtherApps = true
+     // val listenToBroadcastsFromOtherApps = true
       /*
       val receiverFlags = if (listenToBroadcastsFromOtherApps) {
           ReactApplicationContext.RECEIVER_EXPORTED
@@ -83,12 +83,12 @@ class TualoBroadcastReceiverModule(reactContext: ReactApplicationContext) :
   }
 
   @ReactMethod
-  fun addListener(eventName: String?) {
+  fun addListener() {
       // Keep: Required for RN built in Event Emitter Calls.
   }
 
   @ReactMethod
-  fun removeListeners(count: Int?) {
+  fun removeListeners() {
       // Keep: Required for RN built in Event Emitter Calls.
   }
 
